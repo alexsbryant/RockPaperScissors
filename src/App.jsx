@@ -11,8 +11,9 @@ import Result from './components/Result'
 function App() {
 
 const [inPlay, setInPlay] = useState(false)
-const [compChoice, setCompChoice] = useState('none')
-const [userChoice, setUserChoice] = useState('none')
+const [compChoice, setCompChoice] = useState('')
+const [userChoice, setUserChoice] = useState('')
+const [result, setResult] = useState('')
 
 function compDecision() {
   let random = Math.floor(Math.random() * 3)
@@ -40,14 +41,17 @@ const handleScissors = () => {
 }
 
 const handlePlay = () => {
-  setInPlay(true)
-  compDecision()
-  // console.log(`Player Choice: ${userChoice} Computer Choice: ${compChoice}`)
+  if (userChoice === 'rock' || 'paper' || 'scissors') {
+    setInPlay(true)
+    compDecision() } else {
+    handleReset
+  }
 }
 
 const handleReset = () => {
-  setUserChoice('none')
-  setCompChoice('none')
+  setUserChoice('')
+  setCompChoice('')
+  setResult('')
   setInPlay(false)
 }
 
@@ -63,7 +67,12 @@ useEffect(() => {
         <div className='col justify-center'>
           {inPlay ? (
             <>
-              <Result compChoice={compChoice} userChoice={userChoice} />
+              <Result 
+                compChoice={compChoice} 
+                userChoice={userChoice}
+                result={result}
+                setResult={setResult}
+                handleReset={handleReset} />
               <Reset handleReset={handleReset}/>
             </>
           ) : (

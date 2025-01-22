@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Result(props) {
 
-    const { compChoice, userChoice } = props
+    const { compChoice, userChoice, result, setResult, handleReset } = props
 
     const userRock = (<i class="fa-regular fa-hand-back-fist fa-2xl"></i>)
     const userPaper = (<i class="fa-regular fa-hand fa-2xl"></i>)
@@ -31,6 +31,25 @@ function Result(props) {
         compIcon = computerScissors
     }
 
+    if (!userChoice) {
+        alert('Please choose your weapon!')
+        handleReset
+    } else if 
+        (userChoice === compChoice) {
+        setResult("It's a draw.")
+    } else if
+        (userChoice === 'rock' && compChoice === 'paper') {
+        setResult('YOU LOOSE...')
+    } else if 
+        (userChoice === 'paper' && compChoice === 'scissors') {
+        setResult('YOU LOOSE...')
+    } else if 
+        (userChoice === 'scissors' && compChoice === 'rock') {
+        setResult('YOU LOOSE...')
+    } else {
+        setResult('YOU WON!!!')
+    }
+
     return (
         <>
             <div className='row justify-content-center pb-4 mb-4'>
@@ -40,7 +59,7 @@ function Result(props) {
             </div>
             <div className='row justify-content-center pb-4 mb-4'>
                 <div className='col'>
-                    <div>WORKING ON RESULTS PAGE</div>
+                    <div className='display-4'>{result}</div>
                 </div>
             </div>
             <div className='row justify-content-center pb-4 mb-4'>
