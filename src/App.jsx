@@ -4,6 +4,10 @@ import Play from './components/Play'
 import Reset from './components/Reset'
 import Result from './components/Result'
 
+// TO DO: - Fix if else if statements so that setCompChoice works
+//        - Sort out hover and click styling for buttons
+
+
 function App() {
 
 const [inPlay, setInPlay] = useState(false)
@@ -13,11 +17,11 @@ const [userChoice, setUserChoice] = useState('none')
 function compDecision() {
   let random = Math.floor(Math.random() * 3)
   console.log(random)
-  if (random == 0) {
+  if (random === 0) {
     setCompChoice('rock')
-  } else if (random == 1) {
+  } else if (random === 1) {
     setCompChoice('paper')
-  } else if (random == 2) {
+  } else if (random === 2) {
     setCompChoice('scissors')
   }
 }
@@ -52,7 +56,7 @@ const handleReset = () => {
         <div className='col justify-center'>
           {inPlay ? (
             <>
-              <Result />
+              <Result compChoice={compChoice} userChoice={userChoice} />
               <Reset handleReset={handleReset}/>
             </>
           ) : (

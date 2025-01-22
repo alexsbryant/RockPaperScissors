@@ -1,0 +1,4 @@
+.button:hover {
+  background-color: darkcyan;
+  box-shadow: 0.2rem;
+}

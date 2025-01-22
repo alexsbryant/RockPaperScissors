@@ -14,27 +14,30 @@ const scissors = (<i class="fa-regular fa-hand-peace fa-2xl"></i>)
         <div className='row pb-5'>
             <div className='col-4'>
                 <button 
-                    id="rock"
+                    id="btn"
                     type="button" 
                     className='btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
+                    data-bs-toggle="button"
                     onClick={handleRock}>
                         {rock}
                 </button>
             </div>
             <div className='col-4'>
                 <button 
-                    id="paper"
+                    id="btn"
                     type="button" 
                     className='btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
+                    data-bs-toggle="button"
                     onClick={handlePaper}>
                         {paper}
                 </button>
             </div>
             <div className='col-4'>
                 <button 
-                    id="scissors"
+                    id="btn"
                     type="button" 
                     className='btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
+                    data-bs-toggle="button"
                     onClick={handleScissors}>
                         {scissors}
                 </button>
