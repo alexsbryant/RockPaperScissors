@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function Play(props) {
 
-const { handleRock, handlePaper, handleScissors, handlePlay } = props
+const { handleRock, handlePaper, handleScissors, handlePlay, rockSelect, paperSelect, scissorsSelect } = props
 
 //const [select, setSelect] = useState('unselected')
 
@@ -10,8 +10,8 @@ const rock = (<i class="fa-regular fa-hand-back-fist fa-2xl"></i>)
 const paper = (<i class="fa-regular fa-hand fa-2xl"></i>)
 const scissors = (<i class="fa-regular fa-hand-peace fa-2xl"></i>)
 
-const unselected = 'btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
-//const selected = 'btn bg-info-subtle bg-opacity-25 btn-outline-secondary btn-lg py-3 px-3'
+//const unselectedBtn = 'btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
+//const selectedBtn = 'btn bg-info-subtle bg-opacity-25 btn-outline-secondary btn-lg py-3 px-3'
 
   return (
     <>
@@ -26,7 +26,7 @@ const unselected = 'btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
                 <button 
                     id="btn_rock"
                     type="button" 
-                    className={unselected}
+                    className={rockSelect}
                     onClick={handleRock}>
                         {rock}
                 </button>
@@ -35,7 +35,7 @@ const unselected = 'btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
                 <button 
                     id="btn_paper"
                     type="button" 
-                    className={unselected}
+                    className={paperSelect}
                     onClick={handlePaper}>
                         {paper}
                 </button>
@@ -44,7 +44,7 @@ const unselected = 'btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
                 <button 
                     id="btn_scissors"
                     type="button" 
-                    className={unselected}
+                    className={scissorsSelect}
                     onClick={handleScissors}>
                         {scissors}
                 </button>
