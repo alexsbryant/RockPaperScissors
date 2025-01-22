@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Play from './components/Play'
 import Reset from './components/Reset'
@@ -24,6 +24,7 @@ function compDecision() {
   } else if (random === 2) {
     setCompChoice('scissors')
   }
+  // console.log(`compDecision choice: ${compChoice}`)
 }
 
 const handleRock = () => {
@@ -41,7 +42,7 @@ const handleScissors = () => {
 const handlePlay = () => {
   setInPlay(true)
   compDecision()
-  console.log(`Player Choice: ${userChoice} Computer Choice: ${compChoice}`)
+  // console.log(`Player Choice: ${userChoice} Computer Choice: ${compChoice}`)
 }
 
 const handleReset = () => {
@@ -49,6 +50,12 @@ const handleReset = () => {
   setCompChoice('none')
   setInPlay(false)
 }
+
+useEffect(() => {
+  if (inPlay) {
+    console.log(`EFFECT LOG - player: ${userChoice} computer: ${compChoice}`)
+  }
+})
 
   return (
     <div className='container'>

@@ -11,8 +11,13 @@ const scissors = (<i class="fa-regular fa-hand-peace fa-2xl"></i>)
 
   return (
     <>
-        <div className='row pb-5'>
-            <div className='col-4'>
+        <div className='row pb-5 mx-auto justify-content-center'>
+            <div className='col justify-content-center text-center'>
+                <h1 className='display-3 '>Rock<span className='text-muted'>Paper</span><span className='text-body-tertiary'>Scissors</span></h1>
+            </div>
+        </div>
+        <div className='row pb-5 mx-auto justify-content-center'>
+            <div className='col-4 mx-auto'>
                 <button 
                     id="btn"
                     type="button" 
@@ -22,7 +27,7 @@ const scissors = (<i class="fa-regular fa-hand-peace fa-2xl"></i>)
                         {rock}
                 </button>
             </div>
-            <div className='col-4'>
+            <div className='col-4 mx-auto'>
                 <button 
                     id="btn"
                     type="button" 
@@ -32,7 +37,7 @@ const scissors = (<i class="fa-regular fa-hand-peace fa-2xl"></i>)
                         {paper}
                 </button>
             </div>
-            <div className='col-4'>
+            <div className='col-4 mx-auto'>
                 <button 
                     id="btn"
                     type="button" 
