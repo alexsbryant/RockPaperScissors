@@ -31,10 +31,11 @@ function Result(props) {
         compIcon = computerScissors
     }
 
-    if (!userChoice) {
+    if /* (!userChoice) {
         alert('Please choose your weapon!')
         handleReset
-    } else if 
+        return
+    } else if  */
         (userChoice === compChoice) {
         setResult("It's a draw.")
     } else if

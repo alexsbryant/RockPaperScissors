@@ -5,8 +5,8 @@ import Reset from './components/Reset'
 import Result from './components/Result'
 
 // TO DO: 
-//        - Sort out hover and click styling for buttons
-//        - Fix double alert and results page half rendering if nothing selected
+//        - Work on button hover and selected designs
+//        - Work out a way to add a set timed animation before results
 
 
 function App() {
@@ -70,7 +70,11 @@ const handleScissors = () => {
 }
 
 const handlePlay = () => {
-  if (userChoice === 'rock' || 'paper' || 'scissors') {
+  if (!userChoice) {
+    alert('Please choose your weapon!')
+    handleReset
+    return
+} else if (userChoice === 'rock' || 'paper' || 'scissors') {
     setInPlay(true)
     compDecision() } else {
     handleReset
