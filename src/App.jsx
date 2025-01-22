@@ -34,17 +34,17 @@ function compDecision() {
 }
 
 // Button rendering option logic
-// Button State Variables
-
-const [rockSelect, setRockSelect] = useState('unselected')
-const [paperSelect, setPaperSelect] = useState('unselected')
-const [scissorsSelect, setScissorsSelect] = useState('unselected')
 
 // Button Classes
 
 const unselectedBtn = 'btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
 const selectedBtn = 'btn bg-info-subtle bg-opacity-25 btn-outline-secondary btn-lg py-3 px-3'
 
+// Button State Variables
+
+const [rockSelect, setRockSelect] = useState(unselectedBtn)
+const [paperSelect, setPaperSelect] = useState(unselectedBtn)
+const [scissorsSelect, setScissorsSelect] = useState(unselectedBtn)
 
 // Handler functions
 
