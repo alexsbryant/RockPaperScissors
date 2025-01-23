@@ -101,11 +101,11 @@ const handleReset = () => {
 // Score counter logic
 
   function addUserScore() {
-    setUserScore((userScore) => userScore + 0.5)
+    setUserScore((userScore) => userScore + 1)
   }
 
   function addCompScore() {
-      setCompScore((compScore) => compScore + 0.5)
+      setCompScore((compScore) => compScore + 1)
   }
 
   useEffect(() => {
