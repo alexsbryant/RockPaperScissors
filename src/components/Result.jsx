@@ -40,17 +40,16 @@ function Result(props) {
         setResult("It's a draw.")
     } else if
         (userChoice === 'rock' && compChoice === 'paper') {
-        setResult('YOU LOOSE...')
+        setResult('YOU LOSE...')
     } else if 
         (userChoice === 'paper' && compChoice === 'scissors') {
-        setResult('YOU LOOSE...')
+        setResult('YOU LOSE...')
     } else if 
         (userChoice === 'scissors' && compChoice === 'rock') {
-        setResult('YOU LOOSE...')
+        setResult('YOU LOSE...')
     } else {
         setResult('YOU WON!!!')
     }
-
 
     return (
         <>

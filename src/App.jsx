@@ -6,6 +6,7 @@ import Result from './components/Result'
 
 // TO DO: 
 //        - Work on button hover and selected designs
+//        - Create a best-of-3 or best-of-5 round
 //        - Work out a way to add a set timed animation before results
 
 
