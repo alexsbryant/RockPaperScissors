@@ -3,6 +3,8 @@ import './App.css'
 import Play from './components/Play'
 import Reset from './components/Reset'
 import Result from './components/Result'
+import Score from './components/Score'
+import FinalResult from './components/FinalResult'
 
 // TO DO: 
 //        - Work on button hover and selected designs
@@ -18,6 +20,9 @@ const [inPlay, setInPlay] = useState(false)
 const [compChoice, setCompChoice] = useState('')
 const [userChoice, setUserChoice] = useState('')
 const [result, setResult] = useState('')
+const [userScore, setUserScore] = useState(0)
+const [compScore, setCompScore] = useState(0)
+const [winner, setWinner] = useState('')
 
 // Computer's random choice generator
 
@@ -31,7 +36,6 @@ function compDecision() {
   } else if (random === 2) {
     setCompChoice('scissors')
   }
-  // console.log(`compDecision choice: ${compChoice}`)
 }
 
 // Button rendering option logic
@@ -75,9 +79,10 @@ const handlePlay = () => {
     alert('Please choose your weapon!')
     handleReset
     return
-} else if (userChoice === 'rock' || 'paper' || 'scissors') {
-    setInPlay(true)
-    compDecision() } else {
+} else if (['rock', 'paper', 'scissors'].includes(userChoice)) {
+    setInPlay(true);
+    compDecision();
+} else {
     handleReset
   }
 }
@@ -86,42 +91,87 @@ const handleReset = () => {
   setUserChoice('')
   setCompChoice('')
   setResult('')
+  setWinner('')
   setRockSelect(unselectedBtn)
   setPaperSelect(unselectedBtn)
   setScissorsSelect(unselectedBtn)
   setInPlay(false)
 }
 
-useEffect(() => {
-  if (inPlay) {
-    console.log(`EFFECT LOG - player: ${userChoice} computer: ${compChoice}`)
+// Score counter logic
+
+  function addUserScore() {
+    setUserScore((userScore) => userScore + 0.5)
   }
-})
+
+  function addCompScore() {
+      setCompScore((compScore) => compScore + 0.5)
+  }
+
+  useEffect(() => {
+    if (userScore === 5) {
+      setWinner('user')
+    } else if (compScore === 5) {
+      setWinner('comp')
+    }
+    console.log(`Overall winner: ${winner}`)
+  }, [userScore, compScore])
+
+
+  useEffect(() => {
+    if (inPlay) {
+      console.log(`EFFECT LOG - player: ${userChoice} computer: ${compChoice} User Score: ${userScore} Comp Score: ${compScore}`)
+    }
+  }, [userScore, compScore])
+
 
   return (
     <div className='container'>
       <div className='row'>
         <div className='col justify-center'>
-          {inPlay ? (
+          {winner ? 
+          <FinalResult 
+            userScore={userScore} 
+            compScore={compScore}
+            handlePlay={handlePlay} 
+            setUserScore={setUserScore}
+            setCompScore={setCompScore}
+            winner={winner}
+            handleReset={handleReset} />
+             : inPlay ? (
             <>
               <Result 
                 compChoice={compChoice} 
                 userChoice={userChoice}
                 result={result}
                 setResult={setResult}
-                handleReset={handleReset} />
-              <Reset handleReset={handleReset}/>
+                handleReset={handleReset}
+                userScore={userScore}
+                setUserScore={setUserScore}
+                compScore={compScore}
+                setCompScore={setCompScore}
+                addUserScore={addUserScore}
+                addCompScore={addCompScore} />
+              <Reset handleReset={handleReset} />
+              <Score 
+                userScore={userScore}
+                compScore={compScore} />
             </>
           ) : (
-            <Play 
-              handleRock={handleRock}
-              handlePaper={handlePaper}
-              handleScissors={handleScissors}
-              handlePlay={handlePlay}
-              rockSelect={rockSelect}
-              paperSelect={paperSelect}
-              scissorsSelect={scissorsSelect}
-            /> 
+            <>
+              <Play 
+                handleRock={handleRock}
+                handlePaper={handlePaper}
+                handleScissors={handleScissors}
+                handlePlay={handlePlay}
+                rockSelect={rockSelect}
+                paperSelect={paperSelect}
+                scissorsSelect={scissorsSelect}
+              /> 
+              <Score 
+                userScore={userScore}
+                compScore={compScore} />
+            </>
           )}
         </div>
       </div>
