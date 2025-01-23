@@ -11,7 +11,7 @@ function Reset(props) {
                     type="button"
                     className="btn btn-outline-secondary w-50 bg-light text-dark"
                     onClick={handleReset}>
-                        Play again.
+                        Go again!
                 </button>
             </div>
         </div>

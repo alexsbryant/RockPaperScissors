@@ -21,7 +21,7 @@ const scissors = (<i className="fa-regular fa-hand-peace fa-2xl"></i>)
                 <p className='pt-2'>Choose your weapon...</p>
             </div>
         </div>
-        <div className='row pb-5 mx-auto justify-content-center'>
+        <div className='row pb-5 mt-1 mx-auto justify-content-center'>
             <div className='col-4 mx-auto'>
                 <button 
                     id="btn_rock"
@@ -50,7 +50,7 @@ const scissors = (<i className="fa-regular fa-hand-peace fa-2xl"></i>)
                 </button>
             </div>
         </div>
-        <div className='row'>
+        <div className='row pt-4'>
             <div className='col'>
                 <button 
                     id="play"

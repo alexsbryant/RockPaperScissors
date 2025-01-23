@@ -65,7 +65,7 @@ function Result(props) {
 
     return (
         <>
-            <div className='row justify-content-center mt-4 pt-4 pb-2 mb-2'>
+            <div className='row justify-content-center mt-4 pt-4 pb-4 mb-4'>
                 <div className='col'>
                     <div className='fs-4'>{compIcon}</div>
                 </div>

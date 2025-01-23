@@ -9,14 +9,14 @@ function FinalResult(props) {
             return (
                 <div className='col mx-auto'>
                     <i className="fa-solid fa-award fa-beat fa-2xl pb-4 mb-3"></i>
-                    <h1 className='display-2'>WINNER!!!!!</h1>
+                    <h1 className='display-2 pt-3'>WINNER!!!!!</h1>
                 </div>
             )
         } else {
             return (
                 <div className='col mx-auto'>
                     <i className="fa-solid fa-hand-middle-finger fa-bounce fa-2xl pb-4 mb-3"></i>
-                    <h1 className='display-2'>Loser...   :(</h1>
+                    <h1 className='display-2 pt-3'>Loser...   :(</h1>
                 </div>
             )
         }
@@ -35,10 +35,10 @@ function FinalResult(props) {
                     <h1 className='display-3 '>Rock<span className='text-muted'>Paper</span><span className='text-body-tertiary'>Scissors</span></h1>
                 </div>
             </div>
-            <div className='row pb-5 mx-auto justify-content-center'>
+            <div className='row pt-4 pb-4 mx-auto justify-content-center'>
                 {resultStatement()}
             </div>
-            <div className='row'>
+            <div className='row py-4'>
                 <div className='col'>
                     <button
                         id="full_reset"

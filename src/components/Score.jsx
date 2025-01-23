@@ -6,6 +6,7 @@ function Score(props) {
     return (
         <>
             <div className='row py-4'></div>
+            <p className='fw-lighter'>Best of five!</p>
             <div className='row py-4 mx-auto'>
                 <table className='table justify-content-center mx-auto'>
                     <thead>
