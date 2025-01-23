@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function Result(props) {
 
-    const { compChoice, userChoice, result, setResult, handleReset, addUserScore, addCompScore } = props
+    const { compChoice, userChoice, result, setResult, addUserScore, addCompScore } = props
 
     const [roundProcessed, setRoundProcessed] = useState(false)
 
