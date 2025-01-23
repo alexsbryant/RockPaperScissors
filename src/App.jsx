@@ -109,9 +109,9 @@ const handleReset = () => {
   }
 
   useEffect(() => {
-    if (userScore === 5) {
+    if (userScore === 3) {
       setWinner('user')
-    } else if (compScore === 5) {
+    } else if (compScore === 3) {
       setWinner('comp')
     }
     console.log(`Overall winner: ${winner}`)
