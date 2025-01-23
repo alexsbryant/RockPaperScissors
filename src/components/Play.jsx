@@ -6,9 +6,9 @@ const { handleRock, handlePaper, handleScissors, handlePlay, rockSelect, paperSe
 
 //const [select, setSelect] = useState('unselected')
 
-const rock = (<i class="fa-regular fa-hand-back-fist fa-2xl"></i>)
-const paper = (<i class="fa-regular fa-hand fa-2xl"></i>)
-const scissors = (<i class="fa-regular fa-hand-peace fa-2xl"></i>)
+const rock = (<i className="fa-regular fa-hand-back-fist fa-2xl"></i>)
+const paper = (<i className="fa-regular fa-hand fa-2xl"></i>)
+const scissors = (<i className="fa-regular fa-hand-peace fa-2xl"></i>)
 
 //const unselectedBtn = 'btn bg-info-subtle bg-opacity-25 btn-lg py-3 px-3'
 //const selectedBtn = 'btn bg-info-subtle bg-opacity-25 btn-outline-secondary btn-lg py-3 px-3'
