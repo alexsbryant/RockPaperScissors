@@ -59,9 +59,9 @@ function Result(props) {
         setRoundProcessed(true)
     }, [setResult])
 
-    // useEffect(() => {
-    //     if (userChoice && compChoice) setRoundProcessed(false)
-    // }, [userChoice, compChoice])
+    useEffect(() => {
+        if (userChoice && compChoice) setRoundProcessed(false)
+    }, [userChoice, compChoice])
 
     return (
         <>
