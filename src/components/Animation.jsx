@@ -2,7 +2,9 @@ import React from 'react'
 
 function Animation() {
   return (
-    <div><i class="fa-regular fa-hand" fa-bounce></div>
+    <div>
+        <i className="fa-regular fa-hand" fa-bounce></i>
+        </div>
   )
 }
 
