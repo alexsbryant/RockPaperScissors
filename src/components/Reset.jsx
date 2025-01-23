@@ -6,10 +6,10 @@ function Reset(props) {
 
     return (
         <div className='row justify-content-center'>
-            <div className='col-4'>
+            <div className='col'>
                 <button
                     type="button"
-                    className="btn btn-outline-secondary bg-light text-dark"
+                    className="btn btn-outline-secondary w-50 bg-light text-dark"
                     onClick={handleReset}>
                         Play again.
                 </button>
